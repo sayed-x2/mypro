@@ -8,6 +8,13 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
+name: Deploy Portfolio Website
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,8 +23,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy Portfolio HTML
+      - name: Create deploy directory
+        run: mkdir -p deploy
+
+      - name: Copy Portfolio HTML
         run: |
-          echo "Deploying Portfolio Website..."
-          # Here you can run commands to deploy or handle your HTML file
+          echo "Copying Portfolio Website..."
           cp mypro/Portfolioweb.html deploy/
