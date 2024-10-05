@@ -20,4 +20,4 @@ jobs:
         run: |
           echo "Deploying Portfolio Website..."
           # Here you can run commands to deploy or handle your HTML file
-          cp mypro/Portfolioweb.html
+          cp mypro/Portfolioweb.html deploy/
